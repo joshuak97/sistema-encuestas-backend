@@ -31,11 +31,11 @@ class RestPreguntas extends ResourceController
 
  public function create()
  {
-  $cuestionario = new CuestionarioModel();   
+  $cuestionario = new CuestionarioModel();
   $pregunta = new PreguntaModel();
+ 
+  
 
-  
-  
  }
  
 }
