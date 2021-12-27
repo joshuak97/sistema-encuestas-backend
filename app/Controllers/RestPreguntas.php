@@ -34,7 +34,7 @@ class RestPreguntas extends ResourceController
   $cuestionario = new CuestionarioModel();
   $pregunta = new PreguntaModel();
  
-  
+  $row = $cuestionario -> find($id);
 
  }
  
