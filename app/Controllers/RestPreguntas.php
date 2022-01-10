@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\RespuestaModel;
+use App\Models\CuestionarioModel;
 use App\Models\PreguntaModel;
 
 class RestPreguntas extends ResourceController
@@ -31,11 +31,19 @@ class RestPreguntas extends ResourceController
 
  public function create()
  {
-  $cuestionario = new CuestionarioModel();
   $pregunta = new PreguntaModel();
- 
-  $row = $cuestionario -> find($id);
+  $data = $this->request->getVar('data');
+  $response = $pregunta->insertBatch($data);
+  return $this->respond($response,200);
 
- }
+}
+
+public function editar()
+ {
+  $pregunta = new PreguntaModel();
+  $data = $this->request->getVar('data');
+  $response = $pregunta->updateBatch($data,'id_pregunta');
+  print_r($response);
+}
  
 }
