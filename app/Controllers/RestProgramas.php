@@ -3,12 +3,11 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\CuestionarioModel;
-use App\Models\PreguntaModel;
-
-class RestPreguntas extends ResourceController
+use App\Models\ProgramasModel;
+class RestProgramas extends ResourceController
 {
- protected $modelName = 'App\Models\PreguntaModel';
+  
+ protected $modelName = 'App\Models\ProgramasModel';
  protected $format = 'json';
 
  public function index()
@@ -31,18 +30,18 @@ class RestPreguntas extends ResourceController
 
  public function create()
  {
-  $pregunta = new PreguntaModel();
+  $programas = new ProgramasModel;
   $data = $this->request->getVar('data');
-  $response = $pregunta->insertBatch($data);
+  $response = $programas->insertBatch($data);
   return $this->respond($response,200);
 
 }
 
 public function editar()
  {
-  $pregunta = new PreguntaModel();
+  $programas = new ProgramasModel();
   $data = $this->request->getVar('data');
-  $response = $pregunta->updateBatch($data,'id_pregunta');
+  $response = $programas->updateBatch($data,'id_usuario');
   print_r($response);
 }
  
