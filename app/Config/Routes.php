@@ -31,7 +31,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->Resource('restpreguntas',['controller'=>'RestPreguntas']);
+$routes->Resource('productos',['controller'=>'RestProductos']);
+$routes->get('obtener-productos-limit-100', 'RestProductos::obtenerProductosLimit100', ['as' => 'obtener-productos-limit-100']);
+$routes->post('guardar-productos', 'RestProductos::create', ['as' => 'guardar-productos']);
+$routes->put('editar-productos', 'RestProductos::editar', ['as' => 'editar-productos']);
 
 /*
  * --------------------------------------------------------------------

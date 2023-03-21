@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'database' => 'sistema_encuestas_itsmt',
+        'hostname' => 'realingenieriamt.com',
+        'username' => 'mtqua724_gym_app_user',
+        'password' => 'mtqua7242022.',
+        'database' => 'mtqua724_mtqua724_gym_ap',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
